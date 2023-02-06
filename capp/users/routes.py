@@ -8,4 +8,5 @@ def register():
 
 @users.route('/login')
 def login():
-  return render_template('users/login.html', title='login')
+  name='Mario'
+  return render_template('users/login.html', title='login', name=name)
