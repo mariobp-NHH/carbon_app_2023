@@ -1,4 +1,5 @@
 from flask import render_template, Blueprint
+from capp.models import Transport
 
 carbon_app=Blueprint('carbon_app',__name__)
 
@@ -13,4 +14,3 @@ def new_entry():
 @carbon_app.route('/carbon_app/your_data')
 def your_data():
     return render_template('carbon_app/your_data.html', title='your_data')
-    
