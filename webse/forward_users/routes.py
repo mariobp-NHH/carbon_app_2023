@@ -36,31 +36,3 @@ def forward_users_login():
         else:
             flash('Login Unsuccessful. Please check email and password!', 'danger')   
     return render_template('forward_home/forward_login.html', title='Login', form=form)       
-
-@forward_users.route('/forward/logout')
-def forward_users_logout():    
-    logout_user()
-    return redirect(url_for('forward_home.home'))
-
-@forward_users.route('/forward/account', methods=['GET','POST'])
-@login_required
-def forward_users_account(): 
-    form = UpdateAccountForm()
-    if form.validate_on_submit():
-        if form.picture.data:
-            picture_file = save_picture(form.picture.data)
-            current_user.image_file = picture_file
-
-        current_user.username = form.username.data
-        current_user.email = form.email.data
-        current_user.institution = form.institution.data
-        db.session.commit()
-        flash('Your account has been updated!', 'success')
-        return redirect(url_for('forward_users.forward_users_account'))
-    elif request.method == 'GET':
-        form.username.data = current_user.username
-        form.email.data = current_user.email
-
-    encoded_data=read_image(current_user.image_file)
-
-    return render_template('forward_home/forward_account.html', title='Account', image_file=encoded_data, form=form)   
