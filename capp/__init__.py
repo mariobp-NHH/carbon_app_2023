@@ -11,11 +11,6 @@ application.config['SECRET_KEY'] = '1dfc4dedcdsdsd5b2ffa3a090dfc34f845fd'
 application.config['SQLALCHEMY_DATABASE_URI'] = DBVAR 
 application.config['SQLALCHEMY_BINDS'] ={'gender_platform': DBVAR}
 
-# DBVAR = 'sqlite:///user.db'
-# application.config['SECRET_KEY'] = '1dfc4dedcdsdsd5b2ffa3a090dfc34f845fd'
-# application.config['SQLALCHEMY_DATABASE_URI'] = DBVAR
-# application.config['SQLALCHEMY_BINDS'] ={'gender_platform': 'sqlite:///gender_platform.db'}
-
 db = SQLAlchemy(application)
 bcrypt = Bcrypt(application)
 login_manager= LoginManager(application)
