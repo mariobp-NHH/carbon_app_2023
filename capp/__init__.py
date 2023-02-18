@@ -10,7 +10,7 @@ application.config['SECRET_KEY'] = os.environ['SECRET_KEY']
 
 # Define the databasem in GitHub
 DBVAR = f"postgresql://{os.environ['RDS_USERNAME']}:{os.environ['RDS_PASSWORD']}@{os.environ['RDS_HOSTNAME']}/{os.environ['RDS_DB_NAME']}"
-application.config['SQLALCHEMY_DATABASE_URI'] = DBVAR
+application.config['SQLALCHEMY_DATABASE_URI'] = DBVAR 
 application.config['SQLALCHEMY_BINDS'] ={'transport': DBVAR}
 db = SQLAlchemy(application)
 
