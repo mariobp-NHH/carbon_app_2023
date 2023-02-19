@@ -1,6 +1,6 @@
 from flask import render_template, Blueprint
 from capp.models import User, Transport
-# from capp import db
+from capp import db
 
 home=Blueprint('home',__name__)
 
