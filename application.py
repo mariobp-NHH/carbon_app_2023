@@ -9,6 +9,7 @@ application = Flask(__name__)
 DBVAR = f"postgresql://{os.environ['RDS_USERNAME']}:{os.environ['RDS_PASSWORD']}@{os.environ['RDS_HOSTNAME']}/{os.environ['RDS_DB_NAME']}"
 application.config['SQLALCHEMY_DATABASE_URI'] = DBVAR 
 db = SQLAlchemy(application)
+db.create_all()
 
 class User(db.Model):
     __tablename__ = "user_table"
