@@ -14,7 +14,7 @@ class User(db.Model):
     
 @application.route('/')
 @application.route('/home')
-# def home():
+def home():
 #   db.create_all()
 #   from application import User
 #   user1=User(username='Bjørk')
@@ -26,7 +26,7 @@ class User(db.Model):
 #   user4=User(username='Brann')
 #   db.session.add(user4)
 #   db.session.commit()
-#   return "<h1>Welcome Home</h1>"
+    return "<h1>Welcome Home</h1>"
 
 if __name__=='__main__':
   application.run(debug=True) 
