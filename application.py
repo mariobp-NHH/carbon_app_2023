@@ -15,18 +15,18 @@ class User(db.Model):
 @application.route('/')
 @application.route('/home')
 def home():
-#   db.create_all()
-#   from application import User
-#   user1=User(username='Bjørk')
-#   db.session.add(user1)
-#   user2=User(username='Fjell')
-#   db.session.add(user2)
-#   user3=User(username='Regn')
-#   db.session.add(user3)
-#   user4=User(username='Brann')
-#   db.session.add(user4)
-#   db.session.commit()
-    return "<h1>Welcome Home</h1>"
+  db.create_all()
+  from application import User
+  user1=User(username='Bjørk')
+  db.session.add(user1)
+  user2=User(username='Fjell')
+  db.session.add(user2)
+  user3=User(username='Regn')
+  db.session.add(user3)
+  user4=User(username='Brann')
+  db.session.add(user4)
+  db.session.commit()
+  return "<h1>Welcome Home</h1>"
 
 if __name__=='__main__':
   application.run(debug=True) 
