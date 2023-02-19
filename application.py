@@ -18,11 +18,6 @@ class User(db.Model):
 @application.route('/')
 @application.route('/home')
 def home():
-  db.create_all()
-  user1=User(username='Bjørk')
-  db.session.add(user1)
-  user2=User(username='Fjell')
-  db.session.add(user2)
   user3=User(username='Regn')
   db.session.add(user3)
   db.session.commit()
