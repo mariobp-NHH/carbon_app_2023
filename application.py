@@ -3,7 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 
 application = Flask(__name__) 
 
-application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///carbon_app.db'
+DBVAR = f"postgresql://{os.environ['RDS_USERNAME']}:{os.environ['RDS_PASSWORD']}@{os.environ['RDS_HOSTNAME']}/{os.environ['RDS_DB_NAME']}"
+application.config['SQLALCHEMY_DATABASE_URI'] = DBVAR 
 db = SQLAlchemy(application)
 
 class User(db.Model):
